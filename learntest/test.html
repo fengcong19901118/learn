@@ -1,0 +1,515 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>Insert title here</title>
+<style type="text/css">
+*{padding:0;margin:0}
+#piao,#piao1,#piao2,#piao3,#piao4{position:absolute;width:100px;border:5px solid red;height:100px;background:#abcdef;}
+</style>
+<script type="text/javascript" src="../js/jquery.js"></script>
+<script type="text/javascript">
+var dang='right';//水平方向
+var ydang='bottom';//竖直方向
+
+
+var dang1='left';
+var ydang1='top';
+
+
+var dang2='right';
+var ydang2='bottom';
+
+
+var dang3='left';
+var ydang3='bottom';
+
+
+var dang4='right';
+var ydang4='top';
+
+function zou(){
+    var W=document.documentElement.clientWidth;
+    var H=document.documentElement.clientHeight;
+    var L=parseInt(document.getElementById("piao").style.left);
+    var T=parseInt(document.getElementById("piao").style.top);
+    var W1=document.documentElement.clientWidth;
+    var H1=document.documentElement.clientHeight;
+    var L1=parseInt(document.getElementById("piao1").style.left);
+    var T1=parseInt(document.getElementById("piao1").style.top);
+    var W2=document.documentElement.clientWidth;
+    var H2=document.documentElement.clientHeight;
+    var L2=parseInt(document.getElementById("piao2").style.left);
+    var T2=parseInt(document.getElementById("piao2").style.top);
+    var W3=document.documentElement.clientWidth;
+    var H3=document.documentElement.clientHeight;
+    var L3=parseInt(document.getElementById("piao3").style.left);
+    var T3=parseInt(document.getElementById("piao3").style.top);
+    var W4=document.documentElement.clientWidth;
+    var H4=document.documentElement.clientHeight;
+    var L4=parseInt(document.getElementById("piao4").style.left);
+    var T4=parseInt(document.getElementById("piao4").style.top);
+
+
+    if(T-T1<=100 && T-T1>=-100 && L-L1<=100 && L-L1>=-100){
+        if(T-T1>=0 ){
+            if(L-L1>99 && L-L1<101){
+                dang1='left';
+                dang='right';
+            }else if(L1-L>99 && L1-L<101){
+                dang1='right';
+                dang='left';
+            }else{
+                ydang='bottom';
+                ydang1='top';
+            }
+        }else{
+            if(L-L1>98 && L-L1<102){
+                dang1 ='left';
+                dang='right';
+            }else if(L1-L>99 && L1-L<101){
+                dang1='right';
+                dang='left';
+            }else{
+                ydang='top';
+                ydang1='bottom';
+            }
+        }
+    }
+    if(T-T2<=100 && T-T2>=-100 && L-L2<=100 && L-L2>=-100){
+        if(T-T2>=0 ){
+            if(L-L2>99 && L-L2<101){
+                dang2='left';
+                dang='right';
+            }else if(L2-L>99 && L2-L<101){
+                dang2='right';
+                dang='left';
+            }else{
+                ydang='bottom';
+                ydang2='top';
+            }
+        }else{
+            if(L-L2>98 && L-L2<102){
+                dang2='left';
+                dang='right';
+            }else if(L2-L>99 && L2-L<101){
+                dang2='right';
+                dang='left';
+            }else{
+                ydang='top';
+                ydang2='bottom';
+            }
+        }
+    }
+    if(T1-T2<=100 && T1-T2>=-100 && L1-L2<=100 && L1-L2>=-100){
+        if(T1-T2>=0 ){
+            if(L1-L2>99 && L1-L2<101){
+                dang2='left';
+                dang1='right';
+            }else if(L2-L1>99 && L2-L1<101){
+                dang2='right';
+                dang1='left';
+            }else{
+                ydang1='bottom';
+                ydang2='top';
+            }
+        }else{
+            if(L1-L2>98 && L1-L2<102){
+                dang2='left';
+                dang1='right';
+            }else if(L2-L1>99 && L2-L1<101){
+                dang2='right';
+                dang1='left';
+            }else{
+                ydang1='top';
+                ydang2='bottom';
+            }
+        }
+    }
+    if(T-T3<=100 && T-T3>=-100 && L-L3<=100 && L-L3>=-100){
+        if(T-T3>=0 ){
+            if(L-L3>99 && L-L3<101){
+                dang3='left';
+                dang='right';
+            }else if(L3-L>99 && L3-L<101){
+                dang3='right';
+                dang='left';
+            }else{
+                ydang='bottom';
+                ydang3='top';
+            }
+        }else{
+            if(L-L3>98 && L-L3<102){
+                dang3='left';
+                dang='right';
+            }else if(L3-L>99 && L3-L<101){
+                dang3='right';
+                dang='left';
+            }else{
+                ydang='top';
+                ydang3='bottom';
+            }
+        }
+    }
+    if(T1-T3<=100 && T1-T3>=-100 && L1-L3<=100 && L1-L3>=-100){
+        if(T1-T3>=0 ){
+            if(L1-L3>99 && L1-L3<101){
+                dang3='left';
+                dang1='right';
+            }else if(L3-L1>99 && L3-L1<101){
+                dang3='right';
+                dang1='left';
+            }else{
+                ydang1='bottom';
+                ydang3='top';
+            }
+        }else{
+            if(L1-L3>98 && L1-L3<102){
+                dang3='left';
+                dang1='right';
+            }else if(L3-L1>99 && L3-L1<101){
+                dang3='right';
+                dang1='left';
+            }else{
+                ydang1='top';
+                ydang3='bottom';
+            }
+        }
+    }
+    if(T2-T3<=100 && T2-T3>=-100 && L2-L3<=100 && L2-L3>=-100){
+        if(T2-T3>=0 ){
+            if(L2-L3>99 && L2-L3<101){
+                dang3='left';
+                dang2='right';
+            }else if(L3-L2>99 && L3-L2<101){
+                dang3='right';
+                dang2='left';
+            }else{
+                ydang2='bottom';
+                ydang3='top';
+            }
+        }else{
+            if(L2-L3>98 && L2-L3<102){
+                dang3='left';
+                dang2='right';
+            }else if(L3-L2>99 && L3-L2<101){
+                dang3='right';
+                dang2='left';
+            }else{
+                ydang2='top';
+                ydang3='bottom';
+            }
+        }
+    }    
+    if(T-T4<=100 && T-T4>=-100 && L-L4<=100 && L-L4>=-100){
+        if(T-T4>=0 ){
+            if(L-L4>99 && L-L4<101){
+                dang4='left';
+                dang='right';
+            }else if(L4-L>99 && L4-L<101){
+                dang4='right';
+                dang='left';
+            }else{
+                ydang='bottom';
+                ydang4='top';
+            }
+        }else{
+            if(L-L4>98 && L-L4<102){
+                dang4='left';
+                dang='right';
+            }else if(L4-L>99 && L4-L<101){
+                dang4='right';
+                dang='left';
+            }else{
+                ydang='top';
+                ydang4='bottom';
+            }
+        }
+    }
+    if(T1-T4<=100 && T1-T4>=-100 && L1-L4<=100 && L1-L4>=-100){
+        if(T1-T4>=0 ){
+            if(L1-L4>99 && L1-L4<101){
+                dang4='left';
+                dang1='right';
+            }else if(L4-L1>99 && L4-L1<101){
+                dang4='right';
+                dang1='left';
+            }else{
+                ydang1='bottom';
+                ydang4='top';
+            }
+        }else{
+            if(L1-L4>98 && L1-L4<102){
+                dang4='left';
+                dang1='right';
+            }else if(L4-L1>99 && L4-L1<101){
+                dang4='right';
+                dang1='left';
+            }else{
+                ydang1='top';
+                ydang4='bottom';
+            }
+        }
+    }
+    if(T2-T4<=100 && T2-T4>=-100 && L2-L4<=100 && L2-L4>=-100){
+        if(T2-T4>=0 ){
+            if(L2-L4>99 && L2-L4<101){
+                dang4='left';
+                dang2='right';
+            }else if(L4-L2>99 && L4-L2<101){
+                dang4='right';
+                dang2='left';
+            }else{
+                ydang2='bottom';
+                ydang4='top';
+            }
+        }else{
+            if(L2-L4>98 && L2-L4<102){
+                dang4='left';
+                dang2='right';
+            }else if(L4-L2>99 && L4-L2<101){
+                dang4='right';
+                dang2='left';
+            }else{
+                ydang2='top';
+                ydang4='bottom';
+            }
+        }
+    }
+    if(T3-T4<=100 && T3-T4>=-100 && L3-L4<=100 && L3-L4>=-100){
+        if(T3-T4>=0 ){
+            if(L3-L4>99 && L3-L4<101){
+                dang4='left';
+                dang3='right';
+            }else if(L4-L3>99 && L4-L3<101){
+                dang4='right';
+                dang3='left';
+            }else{
+                ydang3='bottom';
+                ydang4='top';
+            }
+        }else{
+            if(L3-L4>98 && L3-L4<102){
+                dang4='left';
+                dang3='right';
+            }else if(L4-L3>99 && L4-L3<101){
+                dang4='right';
+                dang3='left';
+            }else{
+                ydang3='top';
+                ydang4='bottom';
+            }
+        }
+    }
+    //y轴
+    if(T>=H-110 && ydang=='bottom'){
+        ydang='top';
+        $("#piao").css("border","1px solid blue");
+        $("#piao").css("background","#ffffff");
+    }
+    if(T==0 && ydang=='top'){
+        ydang="bottom";
+        document.getElementById("piao").style.border=Math.random()*10+"px solid blue";
+        document.getElementById("piao").style.background="#ffff00";
+    }
+    if(ydang=='bottom'){
+        zT=T+2;
+    }else{
+        zT=T-2;
+    }
+    //x轴
+    if(L>=W-110 && dang=='right'){
+        dang='left';
+        document.getElementById("piao").style.border=Math.random()*10+"px solid red";
+        document.getElementById("piao").style.background="#ff0000";
+    }
+    if(L==0 && dang=='left'){
+        dang='right';
+        document.getElementById("piao").style.border=Math.random()*10+"px solid red";
+        document.getElementById("piao").style.background="#abcdef";
+    }
+    if(dang=='right'){
+        zL=L+2;
+    }else{
+        zL=L-2;
+    }
+
+
+    //y轴
+    if(T1>=H1-110 && ydang1=='bottom'){
+        ydang1='top';
+        $("#piao1").css("border","1px solid blue");
+        $("#piao1").css("background","#ffffff");
+    }
+    if(T1==0 && ydang1=='top'){
+        ydang1="bottom";
+        document.getElementById("piao1").style.border=Math.random()*10+"px solid blue";
+        document.getElementById("piao1").style.background="#ffff00";
+    }
+    if(ydang1=='bottom'){
+        zT1=T1+2;
+    }else{
+        zT1=T1-2;
+    }
+    //x轴
+    if(L1>=W1-110 && dang1=='right'){
+        dang1='left';
+        document.getElementById("piao1").style.border=Math.random()*10+"px solid red";
+        document.getElementById("piao1").style.background="#ff0000";
+    }
+    if(L1==0 && dang1=='left'){
+        dang1='right';
+        document.getElementById("piao1").style.border=Math.random()*10+"px solid red";
+        document.getElementById("piao1").style.background="#abcdef";
+    }
+    if(dang1=='right'){
+        zL1=L1+2;
+    }else{
+        zL1=L1-2;
+    }
+
+    //y轴
+    if(T2>=H2-110 && ydang2=='bottom'){
+        ydang2='top';
+        $("#piao2").css("border","1px solid blue");
+        $("#piao2").css("background","#ffffff");
+    }
+    if(T2==0 && ydang2=='top'){
+        ydang2="bottom";
+        document.getElementById("piao2").style.border=Math.random()*10+"px solid blue";
+        document.getElementById("piao2").style.background="#ffff00";
+    }
+    if(ydang2=='bottom'){
+        zT2=T2+2;
+    }else{
+        zT2=T2-2;
+    }
+    //x轴
+    if(L2>=W2-110 && dang2=='right'){
+        dang2='left';
+        document.getElementById("piao2").style.border=Math.random()*10+"px solid red";
+        document.getElementById("piao2").style.background="#ff0000";
+    }
+    if(L2==0 && dang2=='left'){
+        dang2='right';
+        document.getElementById("piao2").style.border=Math.random()*10+"px solid red";
+        document.getElementById("piao2").style.background="#abcdef";
+    }
+    if(dang2=='right'){
+        zL2=L2+2;
+    }else{
+        zL2=L2-2;
+    }
+
+
+
+    //y轴
+    if(T3>=H3-110 && ydang3=='bottom'){
+        ydang3='top';
+        $("#piao3").css("border","1px solid blue");
+        $("#piao3").css("background","#ffffff");
+    }
+    if(T3==0 && ydang3=='top'){
+        ydang3="bottom";
+        document.getElementById("piao3").style.border=Math.random()*10+"px solid blue";
+        document.getElementById("piao3").style.background="#ffff00";
+    }
+    if(ydang3=='bottom'){
+        zT3=T3+2;
+    }else{
+        zT3=T3-2;
+    }
+    //x轴
+    if(L3>=W3-110 && dang3=='right'){
+        dang3='left';
+        document.getElementById("piao3").style.border=Math.random()*10+"px solid red";
+        document.getElementById("piao3").style.background="#ff0000";
+    }
+    if(L3==0 && dang3=='left'){
+        dang3='right';
+        document.getElementById("piao3").style.border=Math.random()*10+"px solid red";
+        document.getElementById("piao3").style.background="#abcdef";
+    }
+    if(dang3=='right'){
+        zL3=L3+2;
+    }else{
+        zL3=L3-2;
+    }
+
+
+    //y轴
+
+    if(T4>=H4-110 && ydang4=='bottom'){
+        ydang4='top';
+        $("#piao4").css("border","1px solid blue");
+        $("#piao4").css("background","#ffffff");
+    }
+    if(T4==0 && ydang4=='top'){
+        ydang4="bottom";
+        document.getElementById("piao4").style.border=Math.random()*10+"px solid blue";
+        document.getElementById("piao4").style.background="#ffff00";
+    }
+    if(ydang4=='bottom'){
+        zT4=T4+2;
+    }else{
+        zT4=T4-2;
+    }
+    //x轴
+    if(L4>=W4-110 && dang4=='right'){
+        dang4='left';
+        document.getElementById("piao4").style.border=Math.random()*10+"px solid red";
+        document.getElementById("piao4").style.background="#ff0000";
+    }
+    if(L4==0 && dang4=='left'){
+        dang4='right';
+        document.getElementById("piao4").style.border=Math.random()*10+"px solid red";
+        document.getElementById("piao4").style.background="#abcdef";
+    }
+    if(dang4=='right'){
+        zL4=L4+2;
+    }else{
+        zL4=L4-2;
+    }
+    document.getElementById("piao").style.left=zL+"px";
+    document.getElementById("piao").style.top=zT+"px";
+    document.getElementById("piao1").style.left=zL1+"px";
+    document.getElementById("piao1").style.top=zT1+"px";
+    document.getElementById("piao2").style.left=zL2+"px";
+    document.getElementById("piao2").style.top=zT2+"px";
+    document.getElementById("piao3").style.left=zL3+"px";
+    document.getElementById("piao3").style.top=zT3+"px";
+    document.getElementById("piao4").style.left=zL4+"px";
+    document.getElementById("piao4").style.top=zT4+"px";
+}
+
+
+</script>
+</head>
+<body bgcolor="#fedcba">
+<div id="piao" style="left:500px;top:0px;">广告...</div>
+<div id="piao1" style="left:700px;top:500px;">广告1...</div>
+<div id="piao2" style="left:200px;top:200px;">广告2...</div>
+<div id="piao3" style="left:800px;top:200px;">广告3...</div>
+<div id="piao4" style="left:300px;top:500px;">广告4...</div>
+<input type="button"  value="关闭"/>
+<input type="button"  value="显示"/>
+</body>
+</html>
+<script type="text/javascript">
+var t=window.setInterval(zou,10);
+document.getElementById("piao").onmouseover=function(){
+    window.clearInterval(t);
+}
+document.getElementById("piao").onmouseout=function(){
+    t=window.setInterval(zou,10);
+}
+
+
+document.getElementsByTagName("input")[0].onclick=function(){
+    $("#piao").hide(500);
+}
+document.getElementsByTagName("input")[1].onclick=function(){
+    $("#piao").show(500);
+}
+</script>
+

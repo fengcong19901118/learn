@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>CSS3动画学习</title>
+<style>
+#animated_div
+	{
+	width:70px;
+	height:40px;
+	background:#92B901;
+	color:#ffffff;
+	position:absolute;
+	top:500px;
+	font-weight:bold;
+	font:bold 12px '微软雅黑', Verdana, Arial, Helvetica, sans-serif;
+	padding:20px 10px 0px 10px;
+	animation:animated_div 3s linear 0s infinite;
+	-moz-animation:animated_div 3s linear 0s infinite;
+	-webkit-animation:animated_div 3s linear 0s infinite;
+	-o-animation:animated_div 3s linear 0s infinite;
+	border-radius:5px;
+	-webkit-border-radius:5px;
+	text-align: center;
+
+	}
+
+@keyframes animated_div
+	{
+	0%		{transform: rotate(0deg);left:0px;}
+	12%		{transform: rotate(0deg) rotateX(360deg);left:0px;top:0px;}
+	25%		{transform: rotate(20deg) rotateX(180deg);left:512px;top:250px;}
+	50%		{transform: rotate(0deg) rotateX(360deg);left:1024px;top:0px;}
+	62%		{transform: rotate(0deg) rotateX(180deg);left:1024px;top:500px;}
+	75%		{transform: rotate(-20deg) rotateX(360deg);left:512px;top:250px;background:#1ec7e6;}
+	100%	{transform: rotate(-360deg) rotateX(180deg);left:0px;top:500px;}
+	}
+
+@-webkit-keyframes animated_div
+	{
+	0%		{-webkit-transform: rotate(0deg);left:0px;top:0px;}
+	12%		{-webkit-transform: rotate(0deg) rotateX(360deg);left:0px;top:0px;}
+	25%		{-webkit-transform: rotate(20deg) rotateX(180deg);left:512px;top:250px;}
+	37%		{-webkit-transform: rotate(0deg) rotateX(360deg);left:0px;top:0px;}
+	50%		{-webkit-transform: rotate(0deg) rotateX(180deg);left:1024px;top:0px;}
+	62%		{-webkit-transform: rotate(0deg) rotateX(360deg);left:1024px;top:500px;}
+	75%		{-webkit-transform: rotate(-20deg) rotateX(180deg);left:512px;top:250px;background:#1ec7e6;}
+	100%	{-webkit-transform: rotate(-360deg) rotateX(360deg);left:0px;top:500px;}
+	}
+
+@-moz-keyframes animated_div
+	{
+	0%   {-moz-transform: rotate(0deg);left:0px;}
+	12%	 {-moz-transform: rotate(0deg) rotateX(360deg);left:0px;top:0px;}
+	25%  {-moz-transform: rotate(20deg) rotateX(180deg);left:512px;top:250px;}
+	50%  {-moz-transform: rotate(0deg) rotateX(360deg);left:1024px;top:0px;}
+	62%  {-moz-transform: rotate(0deg) rotateX(180deg);left:1024px;top:500px;}
+	75%  {-moz-transform: rotate(-20deg) rotateX(360deg);left:512px;top:250px;background:#1ec7e6;}
+	100% {-moz-transform: rotate(-360deg) rotateX(180deg);left:0px;top:500px;}
+	}
+
+@-o-keyframes animated_div
+	{
+	0%   {transform: rotate(0deg);left:0px;}
+	12%	 {transform: rotate(0deg) rotateX(360deg);left:0px;top:0px;}
+	25%  {transform: rotate(20deg) rotateX(180deg);left:512px;top:250px;}
+	50%  {transform: rotate(0deg) rotateX(360deg);left:1024px;top:0px;}
+	62%  {transform: rotate(0deg) rotateX(180deg);left:1024px;top:500px;}
+	75%  {transform: rotate(-20deg) rotateX(360deg);left:512px;top:250px;background:#1ec7e6;}
+	100% {transform: rotate(-360deg) rotateX(180deg);left:0px;top:500px;}
+	}
+
+</style>
+</head>
+<body>
+
+
+<div id="animated_div">高雄</div>
+</body>
