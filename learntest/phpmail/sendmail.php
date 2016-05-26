@@ -12,12 +12,12 @@
 
 	require_once "email.class.php";
 	//******************** 配置信息 ********************************
-	$smtpserver = "smtp.126.com";//SMTP服务器
+	$smtpserver = "smtp.163.com";//SMTP服务器
 	$smtpserverport =25;//SMTP服务器端口
-	$smtpusermail = "new2008oh@126.com";//SMTP服务器的用户邮箱
+	$smtpusermail = "15605201360@163.com";//SMTP服务器的用户邮箱
 	$smtpemailto = $_POST['toemail'];//发送给谁
-	$smtpuser = "new2008oh";//SMTP服务器的用户帐号
-	$smtppass = "这里是密码";//SMTP服务器的用户密码
+	$smtpuser = "15605201360@163.com";//SMTP服务器的用户帐号
+	$smtppass = "fc15605201360";//SMTP服务器的用户密码
 	$mailtitle = $_POST['title'];//邮件主题
 	$mailcontent = "<h1>".$_POST['content']."</h1>";//邮件内容
 	$mailtype = "HTML";//邮件格式（HTML/TXT）,TXT为文本邮件
