@@ -20,7 +20,7 @@ class kernel{
 		static function run(){
 				set_error_handler(array('kernel', 'exception_error_handler'));
 
-        try {
+            try {
       			$file_path=dirname(__FILE__) . '/test_try_catch.php';
 						if (file_exists($file_path)) {
 								require ($file_path);
@@ -43,7 +43,7 @@ class kernel{
 		}
 
 
-		static public function exception_handler($exception) {
+	static public function exception_handler($exception) {
         if (defined('DEBUG_PHP') && constant('DEBUG_PHP')===true) {
             self::_exception_handler($exception);
             
@@ -123,7 +123,7 @@ EOF;
         echo '服务异常稍后再试';        
     }
 
-	  static function exception_error_handler($errno, $errstr, $errfile, $errline )
+	static function exception_error_handler($errno, $errstr, $errfile, $errline )
     {
         switch ($errno) {
             case E_ERROR:

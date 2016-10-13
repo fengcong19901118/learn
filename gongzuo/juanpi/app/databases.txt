@@ -1,0 +1,13 @@
+CREATE TABLE `sdb_obj_goods` (
+  `goods_id` bigint(20) unsigned NOT NULL AUTO_INCREMENT primary key COMMENT '商品ID',
+  
+  `name` varchar(200) NOT NULL DEFAULT '' COMMENT '商品名称',
+  `pic` varchar(255) DEFAULT NULL COMMENT '小图',
+  `price` decimal(20,3) NOT NULL DEFAULT '0.000' COMMENT '销售价',
+  `uptime` varchar(200) NOT NULL DEFAULT '' COMMENT '活动开始时间',
+  `downtime` varchar(200) NOT NULL DEFAULT '' COMMENT '活动结束时间',
+  `obj` varchar(255) DEFAULT NULL COMMENT '商品链接',
+
+  `p_order` mediumint(8) unsigned NOT NULL DEFAULT '30' COMMENT '排序'
+
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
